@@ -35,7 +35,7 @@ export default class Todo extends Component {
     return (
       <div className="mt-4">
         <div className="row">
-          <div className="col-10 mx-auto">
+          <div className="col-12 mx-auto">
             <div className="card shadow">
               <div className="card-body">
                 <div className="form-group">
@@ -57,31 +57,32 @@ export default class Todo extends Component {
               </div>
             </div>
           </div>
-        </div>
-        <div className="col-10 mx-auto mt-3">
-          {this.state.items.map((item, k) => {
-            return (
-              <div className="card m-2" key={k}>
-                <div className="card-body">
-                  <div className="row">
-                    <div className="col-8">
-                      <div className="lead">{item}</div>
-                    </div>
-                    <div className="col-4">
-                      <button
-                        className="btn btn-danger btn-block"
-                        onClick={() => {
-                          this.delItem(k);
-                        }}
-                      >
-                        delete
-                      </button>
+
+          <div className="col-12 mt-3">
+            {this.state.items.map((item, k) => {
+              return (
+                <div className="card mb-2" key={k}>
+                  <div className="card-body">
+                    <div className="row">
+                      <div className="col-8">
+                        <div className="lead">{item}</div>
+                      </div>
+                      <div className="col-4">
+                        <button
+                          className="btn btn-danger btn-block"
+                          onClick={() => {
+                            this.delItem(k);
+                          }}
+                        >
+                          delete
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     );
